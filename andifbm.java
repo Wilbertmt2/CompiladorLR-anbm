@@ -7,12 +7,12 @@ public class andifbm {
         pila =new Stack();
         
     }
-    int mayor=0;
+    int mayor=0;//Igualar a 0 la variable de aceptación
     
     public void i(String cadena){
         mayor=0;
         pila.clear();
-        pila.push("#");
+        pila.push("#");//Se etablece # al fondo de la pila 
         p(cadena);
         if (mayor==0){
             pila.clear();
@@ -22,8 +22,9 @@ public class andifbm {
         resultado();
         
     }
-    //checar si numero de a's mayor que b's
+    //Evaluar si numero de a's mayor que b's
     public void p(String cadena){
+        //Creación de 2 copias exactas de la cadena a evuluar 
         Stack respaldo=(Stack)pila.clone();
         Stack respaldo2pos=(Stack)pila.clone();
         respaldo.pop();
@@ -75,6 +76,7 @@ public class andifbm {
             q();
         }
     }
+        //Evaluar si numero de a's mayor que b's
     public void p2(String cadena){
         Stack respaldo=(Stack)pila.clone();
         Stack respaldo2pos=(Stack)pila.clone();
@@ -139,27 +141,24 @@ public class andifbm {
         }
     }
 
-    public void q(){
+    public void q(){//Evaluacion de la pila vacía
         if(!pila.empty()&&pila.peek()=="#"){
             pila.pop();
-            //System.out.println("Cadena valida");
-            mayor=1;
-            
-        }else{
-            //System.out.println("Cadena no valida");
-            
+            mayor=1;//Si esta vacía la pila la variable de validación se iguala a uno  
+        }else{ 
         }
     }
-    public void resultado(){
+    public void resultado(){//Impresion de Aceptación de la cadena
         
-        if(mayor==1){
+        if(mayor==1){//Validación de la aceptacíon de la cadena 
             System.out.println("Cadena valida");
         }else{
             System.out.println("Cadena no valida");
         }
     }
     public static void main(String[] args) {
-        andifbm objeto = new andifbm();
+        andifbm objeto = new andifbm();// Objeto de la cadena
+        //Cadena que se desea evaluar
         objeto.i("ab");//1
         objeto.i("aabbb");//2
         objeto.i("aaabb");//3
